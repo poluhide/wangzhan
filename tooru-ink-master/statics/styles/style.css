@@ -1,0 +1,633 @@
+* {
+    box-sizing: border-box;
+    --margin-width: 50px;
+    --margin-height: 55px;
+}
+
+
+.mori {
+    --textColor: rgba(160, 250, 171, 1);
+    --textShadow: rgba(0, 87, 81, 1);
+    --contentShadow1: #001f34;
+    --contentShadow2: rgba(4, 79, 107, 0.8);
+}
+
+.sakura {
+    --textColor: rgb(255, 237, 237);
+    --textShadow: rgb(127, 80, 80);
+    --contentShadow1: #d9c2c2;
+    --contentShadow2: #ffffff;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    /*color: #fff;*/
+    color: var(--textColor);
+    /*overflow: hidden;*/
+    overflow: auto;
+}
+
+.bg
+{
+    background : -moz-linear-gradient(5.63% 94.4% 33.71deg,rgba(0, 37, 61, 1) 0.08%,rgba(0, 87, 81, 1) 100%);
+    background : -webkit-linear-gradient(33.71deg, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+    background : -webkit-gradient(linear,5.63% 94.4% ,109.93% -9.97% ,color-stop(0.0008,rgba(0, 37, 61, 1) ),color-stop(1,rgba(0, 87, 81, 1) ));
+    background : -o-linear-gradient(33.71deg, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+    background : -ms-linear-gradient(33.71deg, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#00253D', endColorstr='#005751' ,GradientType=0)";
+    background : linear-gradient(56.29deg, rgba(0, 37, 61, 1) 0.08%, rgba(0, 87, 81, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00253D',endColorstr='#005751' , GradientType=1);
+    z-index: -1;
+}
+
+.bg2
+{
+    background : -moz-linear-gradient(12.1% 89.85% 35.03deg,rgba(0, 158, 157, 1) 0%,rgba(42, 182, 161, 1) 25.71%,rgba(160, 250, 171, 1) 99.92%);
+    background : -webkit-linear-gradient(35.03deg, rgba(0, 158, 157, 1) 0%, rgba(42, 182, 161, 1) 25.71%, rgba(160, 250, 171, 1) 99.92%);
+    background : -webkit-gradient(linear,12.1% 89.85% ,97.49% 0.07% ,color-stop(0,rgba(0, 158, 157, 1) ),color-stop(0.2571,rgba(42, 182, 161, 1) ),color-stop(0.9992,rgba(160, 250, 171, 1) ));
+    background : -o-linear-gradient(35.03deg, rgba(0, 158, 157, 1) 0%, rgba(42, 182, 161, 1) 25.71%, rgba(160, 250, 171, 1) 99.92%);
+    background : -ms-linear-gradient(35.03deg, rgba(0, 158, 157, 1) 0%, rgba(42, 182, 161, 1) 25.71%, rgba(160, 250, 171, 1) 99.92%);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#009E9D', endColorstr='#A0FAAB' ,GradientType=0)";
+    background : linear-gradient(54.97deg, rgba(0, 158, 157, 1) 0%, rgba(42, 182, 161, 1) 25.71%, rgba(160, 250, 171, 1) 99.92%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009E9D',endColorstr='#A0FAAB' , GradientType=1);
+}
+
+.hide {
+    display: none;
+}
+
+
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+
+.window-size {
+    height: 100vh;
+    width: 100vw;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+.pos-absolute {
+    position: absolute;
+}
+
+.pos-fixed {
+    position: fixed;
+}
+
+.pos-all-0 {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+h1 {
+    font-size: 4.8vw;
+    margin: 0.5vw 0;
+}
+
+h2 {
+    font-size: 2.8vw;
+    margin: 0.5vw 0;
+}
+
+.info h3 {
+    line-height: 20px;
+    margin-bottom: 6px;
+}
+
+
+
+.sakura h1 {
+    font-size: 5.4vw;
+}
+
+.sakura h2 {
+    font-size: 3.4vw;
+}
+
+
+.mori .filter {
+    filter: hue-rotate(30deg) brightness(90%) saturate(80%);
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0%);
+        /*background-position-x: 0%;*/
+    }
+    100% {
+        transform: translateX(5%);
+        /*background-position-x: 100%;*/
+    }
+}
+
+.animation-on {
+    animation-delay: 5s;
+}
+
+.tree1 {
+    height: 120vh;
+    width: 120vw;
+    opacity: 0.5;
+    background-image: url("../imgs/tree1.svg");
+    background-position-y: 12vh;
+    background-position-x: 30%;
+    background-repeat: repeat-x;
+    background-size: 60% 100%;
+    left: -10% !important;
+    top: -10% !important;
+    transition: transform 5s;
+}
+.animation-on .tree1 {
+    animation: moveLeft 35s infinite alternate ease-in-out;
+    transition: none;
+}
+
+.tree2 {
+    height: 120vh;
+    width: 120vw;
+    opacity: 1;
+    background-image: url("../imgs/tree1.svg");
+    background-position-y: 3vh;
+    background-position-x: 20%;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    left: -10% !important;
+    top: -10% !important;
+}
+.animation-on .tree2 {
+    animation: moveLeft 25s infinite alternate ease-in-out;
+    transition: none;
+}
+
+.tree3 {
+    height: 120vh;
+    width: 120vw;
+    opacity: 0.8;
+    background-image: url("../imgs/tree2.svg");
+    background-position-y: 0vh;
+    background-position-x: 60%;
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    left: -10% !important;
+    top: -10% !important;
+    filter: hue-rotate(30deg) saturate(60%);
+}
+.animation-on .tree3 {
+    animation: moveLeft 15s infinite alternate ease-in-out;
+    transition: none;
+}
+
+.light {
+    height: 120vh;
+    width: 120vw;
+    opacity: 1;
+    background-image: url("../imgs/light.svg");
+    background-position-y: -10vh;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: -20vh !important;
+}
+
+.shrub {
+    height: 120vh;
+    width: 120vw;
+    opacity: 1;
+    background: -5% 80% / auto 20% url("../imgs/shrub.svg") repeat-x,
+                0 80% / auto 20% url("../imgs/shrub.svg") repeat-x;
+    position: absolute;
+    left: -10% !important;
+    bottom: -10% !important;
+}
+.animation-on .shrub {
+    animation: moveLeft 10s infinite alternate ease-in-out;
+    transition: none;
+}
+
+.shrub.deep-0 {
+    opacity: 0.2;
+    background-position-x: 30%;
+}
+.animation-on .shrub.deep-0 {
+    animation: moveLeft 10s infinite alternate ease-in-out;
+    transition: none;
+}
+
+.shrub.deep-1 {
+    opacity: 0.4;
+    background-position-x: 60%;
+}
+.animation-on .shrub.deep-1 {
+    animation: moveLeft 20s infinite alternate ease-in-out;
+    transition: none;
+}
+
+.shrub.deep-2 {
+    opacity: 0.4;
+    background-position-x: -20%;
+}
+.animation-on .shrub.deep-2 {
+    animation: moveLeft 30s infinite alternate ease-in-out;
+}
+
+.no-filter {
+    filter: hue-rotate(60deg) brightness(100%) ;
+}
+
+
+#mori {
+    overflow: hidden;
+    /*border: 80px solid transparent;*/
+    margin: var(--margin-height) var(--margin-width);
+    height: calc(100% - 120px);
+    box-shadow:  20px 20px 40px var(--contentShadow1),
+    -20px -20px 40px var(--contentShadow2);
+    border-radius: 20px;
+}
+
+.content {
+  text-shadow: 3px 3px 10px var(--textShadow);
+}
+
+.me {
+    z-index: 999;
+}
+
+.me .content {
+    padding: 7vh 6vw 0 0;
+    text-align: right;
+}
+
+.me .content header {
+    margin-bottom: 10vh;
+}
+
+.me .content header h2 {
+    margin-bottom: 2.4vh;
+}
+
+.me .content header .desc {
+    display: inline-block;
+    text-align: right;
+    margin-top: 2vh;
+    margin-bottom: 0.2vh;
+}
+
+#inks {
+    display: block;
+}
+
+#inkm {
+    display: none;
+}
+
+#inkb {
+    display: none;
+}
+
+.m-ink {
+    display: none;
+}
+
+.inks {
+    left: 0;
+    padding: 7vh 0 0 6vw;
+    position: relative;
+    height: 100%;
+}
+
+.inks .content {
+    /*text-align: ;*/
+    font-size: 3vh;
+    text-shadow: 0px 0px 8px var(--textShadow);
+    padding: 7vh 0 0 10vh;
+    position: absolute !important;
+    height: 100%;
+}
+
+.inks .content p {
+    margin: 0 3vw 0 0;
+}
+
+.ink-item {
+    font-size: 2.4vh;
+}
+
+.nothing {
+    /*transform: translateX();*/
+    transition: transform 400ms linear;
+}
+
+.body {
+    margin: var(--margin-height) var(--margin-width);
+    height: calc(100% - 120px);
+    border-radius: 20px;
+}
+
+.footer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    /** background-image: linear-gradient(to top , rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); */
+}
+
+a {
+    display: inline-block;
+    color: var(--textColor);
+    filter: saturate(80%) hue-rotate(60deg);
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: all 400ms;
+    /*padding: 0 2px;*/
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    display: inline-block;
+    /*background-color: currentColor;*/
+    background-image: linear-gradient(45deg, currentColor 0%, currentColor 100%);
+    background-size: 15px 100%;
+    background-position: 0 0;
+    transition: all 400ms;
+    opacity: 0.6;
+}
+
+a:hover {
+    filter: saturate(120%) hue-rotate(0deg);
+}
+
+a:hover::after {
+    bottom: 0px;
+    height: 2px;
+    background-image: linear-gradient(45deg, transparent 0%, transparent 25%, currentColor 25%, currentColor 75%, transparent 75%, transparent 100%);
+    opacity: 1;
+}
+
+.links {
+    padding-right: 1vw;
+}
+
+
+.sakura #leaves3 {
+    filter: blur(2px);
+}
+
+.sakura #leaves2 {
+    filter: blur(1px);
+}
+
+.sakura .tree {
+    filter: hue-rotate(170deg) saturate(20%);
+}
+
+.sakura .shrub {
+    filter: hue-rotate(60deg) saturate(80%);
+}
+
+.tree1 {
+    filter: blur(8px);
+}
+
+.tree2 {
+    filter: blur(4px);
+}
+
+.hana-container {
+    width: 100vw;
+    height: 100vh;
+    left: -5vw !important;
+    top: 8vh !important;
+}
+
+.hana {
+    position: absolute;
+    width: 20%;
+}
+
+.hana1 {
+    width: 60vw;
+    transform: rotate(15deg);
+    transform-origin: left bottom;
+    top: -10vw !important;
+    z-index: 2;
+}
+
+.hana2 {
+    width: 15vw;
+    transform: rotate(25deg);
+    transform-origin: bottom center;
+    left: 1vw !important;
+    top: 0vw !important;
+    z-index: 1;
+}
+
+.hana3 {
+    width: 15vw;
+    /*transform: rotate(35deg);*/
+    transform-origin: bottom center;
+    left: 6vw;
+    top: 18vw;
+    z-index: 3;
+}
+
+.hana4 {
+    width: 20vw;
+    transform-origin: bottom center;
+    left: 32vw !important;
+    top: 10vw !important;
+    z-index: 4;
+}
+
+.hana5 {
+    width: 15vw;
+    transform: rotate(30deg);
+    transform-origin: bottom center;
+    left: 38vw !important;
+    top: 5vw !important;
+    z-index: 4;
+}
+
+.hana6 {
+    width: 40vw;
+    transform: rotate(0deg);
+    transform-origin: left bottom;
+    top: 3vw !important;
+    left: -5vw !important;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.hana7 {
+    width: 18vw;
+    transform: rotate(80deg);
+    transform-origin: bottom center;
+    left: -10vw !important;
+    top: -5vw !important;
+    z-index: -1;
+    filter: blur(5px);
+}
+
+.sakura footer {
+    color: #333;
+}
+
+.sakura footer a {
+    color: #666;
+}
+
+
+.right-bracket {
+    display: inline-block;
+    width: 1.5vw;
+}
+
+.cn-name-m {
+    display: none;
+}
+
+@media only screen and (max-aspect-ratio: 10 / 10){
+    #inks {
+        display: none;
+    }
+    #inkm {
+        display: block;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 9 / 10){
+
+    * {
+        --margin-width: 20px;
+        --margin-height: 35px;
+    }
+
+    #inks {
+        display: none;
+    }
+
+    #inkm {
+        display: none;
+    }
+
+    #inkb {
+        display: block;
+    }
+
+    .m-ink {
+        display: block;
+    }
+
+    .me > .content > div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info {
+        position: relative;
+        flex: 1;
+        max-width: none;
+        max-height: 70em;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.125em;
+    }
+
+    .links {
+        text-align: left;
+    }
+
+    .inks {
+        position: absolute;
+        top: 0;
+        bottom: 10vh;
+        padding: 0;
+    }
+
+    .inks .content {
+        padding: 0 0 0 4vh;
+    }
+
+    .inks .content p {
+    }
+
+    .ink-item {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 4.8vh;
+    }
+
+    h2 {
+        font-size: 2.8vh;
+    }
+
+    .info h3 {
+        font-size: 18px;
+        margin: -10px 20px 0 2px;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .friend {
+        display: none;
+    }
+
+    .heti {
+        font-size: 14px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+    .body {
+        height: calc(100% - 100px);
+    }
+
+    #mori {
+        height: calc(100% - 100px);
+    }
+
+    h2 .right-bracket {
+        width: 1.3vh;
+    }
+
+    .info a::after {
+        content: none;
+    }
+
+    .cn-name-m {
+        display: block;
+        position: absolute;
+        bottom: 10vh;
+        left: 3vh;
+        max-width: none;
+        max-height: 70em;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.125em;
+    }
+
+    .header {
+        margin-bottom: 6vh !important;
+    }
+
+}
